@@ -78,20 +78,20 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 = 1 =
 * Initial Release, forked and updated from easy-nutrition-facts-label plugin
 
-=2 =
+= 2 =
 * Add ability for user generated additional vitamins
 * If a field is left blank add it to text summary line "Not a significant source of"
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
-=2.1 =
+= 2.1 =
 * localization
 
 == Changelog ==
 
 = 1 =
 * Initial release
-=2 =
+= 2 =
 * Add ability for user generated additional vitamins
 * If a field is left blank add it to text summary line "Not a significant source of"
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
-=2.1 =
+= 2.1 =
 * localization
