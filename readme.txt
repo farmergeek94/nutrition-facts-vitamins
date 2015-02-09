@@ -4,7 +4,7 @@ Tags: nutrition facts label, food, nutrition, nutrition facts, nutrition label, 
 Requires at least: 3.0
 Tested up to: 4.0
 Stable tag: trunk
-Version: 2.0
+Version: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,8 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 * Add ability for user generated additional vitamins
 * If a field is left blank add it to text summary line "Not a significant source of"
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
+=2.1 =
+* localization
 
 == Changelog ==
 
@@ -91,3 +93,5 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 * Add ability for user generated additional vitamins
 * If a field is left blank add it to text summary line "Not a significant source of"
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
+=2.1 =
+* localization

@@ -3,7 +3,7 @@
  Plugin Name:	Nutrition Facts Vitamins
  Plugin URI: 	http://dandelionwebdesign.com/downloads/nutrition-facts-vitamins/
  Description:	This plugin adds a custom post type "Labels" to generate a Nutrition Facts Label. Includes Vitamins A, C, Calcium and Iron. Also supports user generated additional vitamins or "Not a Significant source of" text for blank fields. Use shortcode [nutrition-label id=XXX]to add the label to any page or post.
- Version: 		2.0
+ Version: 		2.1
  Author: 		Dandelion Web Design Inc.
  Author URI:	http://dandelionwebdesign.com/
 
@@ -20,7 +20,6 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 
 /* ADDS */
 add_shortcode( 'nutrition-label', 'nutr_label_shortcode');
@@ -51,24 +50,23 @@ $rda = array(
 
 /* BASE NUTRIIONAL FIELDS */
 $nutrional_fields = array(
-					'servingsize' 	=> __('Serving Size'),
-					'servings' 		=> __('Servings'),
-					'calories' 		=> __('Calories'),
-					'totalfat' 		=> __('Total Fat'),
-					'satfat' 		=> __('Saturated Fat'),
-					'transfat' 		=> __('Trans. Fat'),
-					'cholesterol' 	=> __('Cholesterol'),
-					'sodium' 		=> __('Sodium'),
-					'carbohydrates' => __('Carbohydrates'),
-					'fiber' 		=> __('Fiber'),
-					'sugars' 		=> __('Sugars'),
-					'protein' 		=> __('Protein'),
-					'vitamin_a'		=> __('Vitamin A'),
-					'vitamin_c'		=> __('Vitamin C'),
-					'calcium'		=> __('Calcium'),
-					'iron'		    => __('Iron')
+					'servingsize' 	=> __('Serving Size','nutrition-facts-vitamins'),
+					'servings' 		=> __('Servings','nutrition-facts-vitamins'),
+					'calories' 		=> __('Calories','nutrition-facts-vitamins'),
+					'totalfat' 		=> __('Total Fat','nutrition-facts-vitamins'),
+					'satfat' 		=> __('Saturated Fat','nutrition-facts-vitamins'),
+					'transfat' 		=> __('Trans. Fat','nutrition-facts-vitamins'),
+					'cholesterol' 	=> __('Cholesterol','nutrition-facts-vitamins'),
+					'sodium' 		=> __('Sodium','nutrition-facts-vitamins'),
+					'carbohydrates' => __('Carbohydrates','nutrition-facts-vitamins'),
+					'fiber' 		=> __('Fiber','nutrition-facts-vitamins'),
+					'sugars' 		=> __('Sugars','nutrition-facts-vitamins'),
+					'protein' 		=> __('Protein','nutrition-facts-vitamins'),
+					'vitamin_a'		=> __('Vitamin A','nutrition-facts-vitamins'),
+					'vitamin_c'		=> __('Vitamin C','nutrition-facts-vitamins'),
+					'calcium'		=> __('Calcium','nutrition-facts-vitamins'),
+					'iron'		    => __('Iron','nutrition-facts-vitamins')
 				);
-
 
 
 /*
@@ -76,22 +74,22 @@ $nutrional_fields = array(
  */
 function nutr_init()
 {
-	load_plugin_textdomain('wp-nutrition-label', false, 'wp-nutrition-label/languages/');
+	load_plugin_textdomain('nutrition-facts-vitamins', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 	$labels = array(
-		'name' => __('Nutritional Labels'),
-		'singular_name' => __('Label'),
-		'add_new' => __('Add New'),
-		'add_new_item' => __('Add New Label'),
-		'edit_item' => __('Edit Label'),
-		'new_item' => __('New Label'),
-		'all_items' => __('All Labels'),
-		'view_item' => __('View Label'),
-		'search_items' => __('Search Labels'),
-		'not_found' =>  __('No labels found'),
-		'not_found_in_trash' => __('No labels found in Trash'), 
+		'name' => __('Nutritional Labels','nutrition-facts-vitamins'),
+		'singular_name' => __('Label','nutrition-facts-vitamins'),
+		'add_new' => __('Add New','nutrition-facts-vitamins'),
+		'add_new_item' => __('Add New Label','nutrition-facts-vitamins'),
+		'edit_item' => __('Edit Label','nutrition-facts-vitamins'),
+		'new_item' => __('New Label','nutrition-facts-vitamins'),
+		'all_items' => __('All Labels','nutrition-facts-vitamins'),
+		'view_item' => __('View Label','nutrition-facts-vitamins'),
+		'search_items' => __('Search Labels','nutrition-facts-vitamins'),
+		'not_found' =>  __('No labels found','nutrition-facts-vitamins'),
+		'not_found_in_trash' => __('No labels found in Trash','nutrition-facts-vitamins'), 
 		'parent_item_colon' => '',
-		'menu_name' => __('Labels')
+		'menu_name' => __('Labels','nutrition-facts-vitamins')
 	);
 	
 	$args = array(
@@ -141,11 +139,11 @@ function nutr_create_metabox_1()
 	<div class="nutritionPluginWrap">
 		<div class="pageSelectWrap">
 			<div class="label">
-				<?php _e('Page'); ?>
+				<?php _e('Page','nutrition-facts-vitamins'); ?>
 			</div>
 			<select name="pageid" class="left">
-				<option value=""><?php _e('Select a Page...'); ?></option>
-				<optgroup label="<?php _e('Pages'); ?>">
+				<option value=""><?php _e('Select a Page...','nutrition-facts-vitamins'); ?></option>
+				<optgroup label="<?php _e('Pages','nutrition-facts-vitamins'); ?>">
 					<?php foreach($pages as $page) { ?>
 					<option value="<?php echo $page->ID ?>"<?php if($selected_page_id == $page->ID) echo " SELECTED"; ?>><?php echo $page->post_title ?></option>
 					<?php } ?>
@@ -266,10 +264,10 @@ function nutr_modify_nutritional_label_table( $column )
 { 
 	$columns = array(
 		'cb'       			=> '<input type="checkbox" />',
-		'title'    			=> 'Title',
-		'nutr_shortcode'    => 'Shortcode',
-		'nutr_page'    		=> 'Page',
-		'date'     			=> 'Date'
+		'title'    			=> 'Title','nutrition-facts-vitamins',
+		'nutr_shortcode'    => 'Shortcode','nutrition-facts-vitamins',
+		'nutr_page'    		=> 'Page','nutrition-facts-vitamins',
+		'date'     			=> 'Date','nutrition-facts-vitamins'
 	);
 
 	return $columns;
@@ -392,61 +390,61 @@ function nutr_label_generate( $id, $width = 22 )
 	$rtn = "";
 	$rtn .= "<div class='wp-nutrition-label' id='wp-nutrition-label-$id' " . ($style ? $style : "") . ">\n";
 	
-	$rtn .= "	<div class='heading'>".__("Nutrition Facts")."</div>\n";
+	$rtn .= "	<div class='heading'>".__('Nutrition Facts','nutrition-facts-vitamins')."</div>\n";
 		
-	$rtn .= "	<div>" . __("Serving Size") . " " . $servingsize . "</div>\n";
-	$rtn .= "	<div>" . __("Servings Per Container") . " " . $servings . "</div>\n";
+	$rtn .= "	<div>" . __('Serving Size','nutrition-facts-vitamins') . " " . $servingsize . "</div>\n";
+	$rtn .= "	<div>" . __('Servings Per Container','nutrition-facts-vitamins') . " " . $servings . "</div>\n";
 	$rtn .= "	<hr />\n";
-	$rtn .= "	<div class='amount-per small item_row noborder'>Amount Per Serving</div>\n";
+	$rtn .= "	<div class='amount-per small item_row noborder'>". __('Amount Per Serving','nutrition-facts-vitamins') ."</div>\n";
 
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'>" . __("Calories") . " " . $calories . "</span>\n";
-	$rtn .= "		<span class='f-right'>Calories from Fat " . ($totalfat * 9) . "</span>\n";
+	$rtn .= "		<span class='f-left'>" . __('Calories','nutrition-facts-vitamins') . " " . $calories . "</span>\n";
+	$rtn .= "		<span class='f-right'>" . __('Calories from Fat','nutrition-facts-vitamins') .($totalfat * 9) . "</span>\n";
 	$rtn .= "	</div>\n";
 	
-	$rtn .= "	<div class='item_row daily-value small'>% " . __("Daily Value") . "*</div>\n";
+	$rtn .= "	<div class='item_row daily-value small'>% " . __('Daily Value','nutrition-facts-vitamins') . "*</div>\n";
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'><strong>" . __("Total Fat") . "</strong> " . $totalfat . "g</span>\n";
+	$rtn .= "		<span class='f-left'><strong>" . __('Total Fat','nutrition-facts-vitamins') . "</strong> " . $totalfat . "g</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($totalfat, $rda['totalfat']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='indent item_row cf'>\n";
-	$rtn .= "		<span class='f-left'>" . __("Saturated Fat") . " " . $satfat . "g</span>\n";
+	$rtn .= "		<span class='f-left'>" . __('Saturated Fat','nutrition-facts-vitamins') . " " . $satfat . "g</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($satfat, $rda['satfat']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='indent item_row cf'>\n";
-	$rtn .= "		<span>" . __("Trans Fat") . " " . $transfat . "g</span>";
+	$rtn .= "		<span>" . __('Trans Fat','nutrition-facts-vitamins') . " " . $transfat . "g</span>";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'><strong>" . __("Cholesterol") . "</strong> " . $cholesterol . "mg</span>\n";
+	$rtn .= "		<span class='f-left'><strong>" . __('Cholesterol','nutrition-facts-vitamins') . "</strong> " . $cholesterol . "mg</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($cholesterol, $rda['cholesterol']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'><strong>" . __("Sodium")."</strong> " . $sodium . "mg</span>\n";
+	$rtn .= "		<span class='f-left'><strong>" . __('Sodium','nutrition-facts-vitamins')."</strong> " . $sodium . "mg</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($sodium, $rda['sodium']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'><strong>" . __("Total Carbohydrate") . "</strong> " . $carbohydrates . "g</span>\n";
+	$rtn .= "		<span class='f-left'><strong>" . __('Total Carbohydrate','nutrition-facts-vitamins') . "</strong> " . $carbohydrates . "g</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($carbohydrates, $rda['carbohydrates']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='indent item_row cf'>\n";
-	$rtn .= "		<span class='f-left'>" . __("Dietary Fiber")." ".$fiber . "g</span>\n";
+	$rtn .= "		<span class='f-left'>" . __('Dietary Fiber','nutrition-facts-vitamins')." ".$fiber . "g</span>\n";
 	$rtn .= "		<span class='f-right'>" . nutr_percentage($fiber, $rda['fiber']) . "%</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='indent item_row cf'>\n";
-	$rtn .= "		<span>".__("Sugars")." ".$sugars."g</span>";
+	$rtn .= "		<span>".__('Sugars','nutrition-facts-vitamins')." ".$sugars."g</span>";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		<span class='f-left'><strong>".__("Protein")."</strong> ".$protein."g</span>\n";
+	$rtn .= "		<span class='f-left'><strong>".__('Protein','nutrition-facts-vitamins')."</strong> ".$protein."g</span>\n";
 	$rtn .= "		<span class='f-right'></span>\n";
 	$rtn .= "	</div>\n";
 	
@@ -454,39 +452,39 @@ function nutr_label_generate( $id, $width = 22 )
 	
 	if( $vitamin_a || ($vitamin_a === "0") ) {
 		$rtn .= "	<div class='item_row noborder cf'>\n";
-		$rtn .= "		<span class='f-left'>Vitamin A</span>\n";
+		$rtn .= "		<span class='f-left'>". __('Vitamin A','nutrition-facts-vitamins')."</span>\n";
 		$rtn .= "		<span class='f-right'>" . $vitamin_a.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = 'vitamin A';
+		$insufficient[] = "('vitamin A','nutrition-facts-vitamins')";
 	}
 	
 
 	if( $vitamin_c || ($vitamin_c === "0") ) {
 		$rtn .= "	<div class='item_row cf'>\n";
-		$rtn .= "		<span class='f-left'>Vitamin C</span>\n";
+		$rtn .= "		<span class='f-left'>". __('Vitamin C','nutrition-facts-vitamins')."</span>\n";
 		$rtn .= "		<span class='f-right'>" . $vitamin_c.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = 'vitamin C';
+		$insufficient[] = "('vitamin C','nutrition-facts-vitamins')";
 	}
 	
 	if( $calcium || ($calcium === "0") ) {
 		$rtn .= "	<div class='item_row cf'>\n";
-		$rtn .= "		<span class='f-left'>Calcium</span>\n";
+		$rtn .= "		<span class='f-left'>". __('Calcium','nutrition-facts-vitamins')."</span>\n";
 		$rtn .= "		<span class='f-right'>" .$calcium.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = 'calcium';
+		$insufficient[] = "('calcium','nutrition-facts-vitamins')";
 	}
 
 	if( $iron || ($iron === "0") ) {
 		$rtn .= "	<div class='item_row cf'>\n";
-		$rtn .= "		<span class='f-left'>Iron</span>\n";
+		$rtn .= "		<span class='f-left'>". __('Iron','nutrition-facts-vitamins')."</span>\n";
 		$rtn .= "		<span class='f-right'>" . $iron .  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = 'iron';
+		$insufficient[] = "('iron','nutrition-facts-vitamins')";
 	}
 
    /*
@@ -523,13 +521,13 @@ function nutr_label_generate( $id, $width = 22 )
    		}
 
 		$rtn .= "	<div class='item_row cf'>\n";
-		$rtn .= 			__("Not a significant source of ") . implode(', ', $insufficient);
+		$rtn .= 			__('Not a significant source of','nutrition-facts-vitamins') . implode(', ', $insufficient);
 		$rtn .= 			$last . ".\n";
 		$rtn .= "	</div>";		
 	}    
 
 	$rtn .= "	<div class='item_row cf'>\n";
-	$rtn .= "		*" . __("Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.");
+	$rtn .= "		*" . __('Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.','nutrition-facts-vitamins');
 	$rtn .= "	</div>\n";
   
 	$rtn .= "</div> <!-- /wp-nutrition-label -->\n\n";
