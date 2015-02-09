@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nutrition Facts Vitamins\n"
-"POT-Creation-Date: 2015-02-09 12:16-0500\n"
-"PO-Revision-Date: 2015-02-09 12:26-0500\n"
+"POT-Creation-Date: 2015-02-09 12:26-0500\n"
+"PO-Revision-Date: 2015-02-09 12:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: nutrition-facts-vitamins.php:53 nutrition-facts-vitamins.php:395
 msgid "Serving Size"
-msgstr "Per"
+msgstr "Pour"
 
 #: nutrition-facts-vitamins.php:54
 msgid "Servings"
@@ -117,74 +117,76 @@ msgstr "Etiquette"
 
 #: nutrition-facts-vitamins.php:88
 msgid "Search Labels"
-msgstr ""
+msgstr "Recherche étiquettes"
 
 #: nutrition-facts-vitamins.php:89
 msgid "No labels found"
-msgstr ""
+msgstr "Pas de temps retrouvé."
 
 #: nutrition-facts-vitamins.php:90
 msgid "No labels found in Trash"
-msgstr ""
+msgstr "Pas trouvés dans la poubelle d'étiquettes"
 
 #: nutrition-facts-vitamins.php:92
 msgid "Labels"
-msgstr ""
+msgstr "Labels"
 
 #: nutrition-facts-vitamins.php:142
 msgid "Page"
-msgstr ""
+msgstr "Page"
 
 #: nutrition-facts-vitamins.php:145
 msgid "Select a Page..."
-msgstr ""
+msgstr "Sélectionner une page:"
 
 #: nutrition-facts-vitamins.php:146
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: nutrition-facts-vitamins.php:151
 msgid "Posts"
-msgstr ""
+msgstr "Posts"
 
 #: nutrition-facts-vitamins.php:393
 msgid "Nutrition Facts"
-msgstr ""
+msgstr "Valeur nutritive"
 
 #: nutrition-facts-vitamins.php:396
 msgid "Servings Per Container"
-msgstr ""
+msgstr "Portions par contenant"
 
 #: nutrition-facts-vitamins.php:398
 msgid "Amount Per Serving"
-msgstr ""
+msgstr "Par portion"
 
 #: nutrition-facts-vitamins.php:403
 msgid "Calories from Fat"
-msgstr ""
+msgstr "Calories provenant des matières grasses"
 
 #: nutrition-facts-vitamins.php:406
 msgid "Daily Value"
-msgstr ""
+msgstr "Apports nutritionnels conseillés"
 
 #: nutrition-facts-vitamins.php:419
 msgid "Trans Fat"
-msgstr ""
+msgstr "Gras trans"
 
 #: nutrition-facts-vitamins.php:433
 msgid "Total Carbohydrate"
-msgstr ""
+msgstr "Glucides"
 
 #: nutrition-facts-vitamins.php:438
 msgid "Dietary Fiber"
-msgstr ""
+msgstr "fibre diététique"
 
 #: nutrition-facts-vitamins.php:524
 msgid "Not a significant source of"
-msgstr ""
+msgstr "Source négligeable de"
 
 #: nutrition-facts-vitamins.php:530
 msgid ""
 "Percent Daily Values are based on a 2,000 calorie diet. Your daily values "
 "may be higher or lower depending on your calorie needs."
 msgstr ""
+"Une dose initiale plus faible ou plus élevée peut être recommandée par "
+"votre médecin en fonction de vos besoins individuels de traitement."
