@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nutrition Facts Vitamins\n"
+"POT-Creation-Date: 2015-02-09 12:16-0500\n"
+"PO-Revision-Date: 2015-02-09 12:26-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: nutrition-facts-vitamins.php:53 nutrition-facts-vitamins.php:395
+msgid "Serving Size"
+msgstr "Per"
+
+#: nutrition-facts-vitamins.php:54
+msgid "Servings"
+msgstr "Portions"
+
+#: nutrition-facts-vitamins.php:55 nutrition-facts-vitamins.php:402
+msgid "Calories"
+msgstr "Calories"
+
+#: nutrition-facts-vitamins.php:56 nutrition-facts-vitamins.php:409
+msgid "Total Fat"
+msgstr "Lipides"
+
+#: nutrition-facts-vitamins.php:57 nutrition-facts-vitamins.php:414
+msgid "Saturated Fat"
+msgstr "saturés"
+
+#: nutrition-facts-vitamins.php:58
+msgid "Trans. Fat"
+msgstr "trans"
+
+#: nutrition-facts-vitamins.php:59 nutrition-facts-vitamins.php:423
+msgid "Cholesterol"
+msgstr "Cholestérol"
+
+#: nutrition-facts-vitamins.php:60 nutrition-facts-vitamins.php:428
+msgid "Sodium"
+msgstr "Sodium"
+
+#: nutrition-facts-vitamins.php:61
+msgid "Carbohydrates"
+msgstr "Glucides"
+
+#: nutrition-facts-vitamins.php:62
+msgid "Fiber"
+msgstr "Fibres"
+
+#: nutrition-facts-vitamins.php:63 nutrition-facts-vitamins.php:443
+msgid "Sugars"
+msgstr "Sucres"
+
+#: nutrition-facts-vitamins.php:64 nutrition-facts-vitamins.php:447
+msgid "Protein"
+msgstr "Protéine"
+
+#: nutrition-facts-vitamins.php:65 nutrition-facts-vitamins.php:455
+msgid "Vitamin A"
+msgstr "Vitamine A"
+
+#: nutrition-facts-vitamins.php:66 nutrition-facts-vitamins.php:465
+msgid "Vitamin C"
+msgstr "Vitamine C"
+
+#: nutrition-facts-vitamins.php:67 nutrition-facts-vitamins.php:474
+msgid "Calcium"
+msgstr "Calcium"
+
+#: nutrition-facts-vitamins.php:68 nutrition-facts-vitamins.php:483
+msgid "Iron"
+msgstr "Fer"
+
+#: nutrition-facts-vitamins.php:80
+msgid "Nutritional Labels"
+msgstr "Valeur nutritive"
+
+#: nutrition-facts-vitamins.php:81
+msgid "Label"
+msgstr "Label"
+
+#: nutrition-facts-vitamins.php:82
+msgid "Add New"
+msgstr "Ajouter"
+
+#: nutrition-facts-vitamins.php:83
+msgid "Add New Label"
+msgstr "Ajouter nouveau Label"
+
+#: nutrition-facts-vitamins.php:84
+msgid "Edit Label"
+msgstr "Modifier"
+
+#: nutrition-facts-vitamins.php:85
+msgid "New Label"
+msgstr "Nouveau Label"
+
+#: nutrition-facts-vitamins.php:86
+msgid "All Labels"
+msgstr "Toutes les étiquettes"
+
+#: nutrition-facts-vitamins.php:87
+msgid "View Label"
+msgstr "Etiquette"
+
+#: nutrition-facts-vitamins.php:88
+msgid "Search Labels"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:89
+msgid "No labels found"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:90
+msgid "No labels found in Trash"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:92
+msgid "Labels"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:142
+msgid "Page"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:145
+msgid "Select a Page..."
+msgstr ""
+
+#: nutrition-facts-vitamins.php:146
+msgid "Pages"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:151
+msgid "Posts"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:393
+msgid "Nutrition Facts"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:396
+msgid "Servings Per Container"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:398
+msgid "Amount Per Serving"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:403
+msgid "Calories from Fat"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:406
+msgid "Daily Value"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:419
+msgid "Trans Fat"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:433
+msgid "Total Carbohydrate"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:438
+msgid "Dietary Fiber"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:524
+msgid "Not a significant source of"
+msgstr ""
+
+#: nutrition-facts-vitamins.php:530
+msgid ""
+"Percent Daily Values are based on a 2,000 calorie diet. Your daily values "
+"may be higher or lower depending on your calorie needs."
+msgstr ""
