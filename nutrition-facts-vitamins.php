@@ -148,7 +148,7 @@ function nutr_create_metabox_1()
 					<option value="<?php echo $page->ID ?>"<?php if($selected_page_id == $page->ID) echo " SELECTED"; ?>><?php echo $page->post_title ?></option>
 					<?php } ?>
 				</optgroup>
-				<optgroup label="<?php _e('Posts'); ?>">
+				<optgroup label="<?php _e('Posts','nutrition-facts-vitamins'); ?>">
 					<?php foreach($posts as $post) { ?>
 					<option value="<?php echo $post->ID ?>"<?php if($selected_page_id == $post->ID) echo " SELECTED"; ?>><?php echo $post->post_title ?></option>
 					<?php } ?>
@@ -199,7 +199,8 @@ function nutr_create_metabox_1()
 			//Add a nonce field
 			wp_nonce_field(plugin_basename(__FILE__), 'nutrition-facts-nonce');		
 		?>
-			<a class="addNewVitamin" href="javascript:void(0)">Add New Vitamin</a>
+			<a class="addNewVitamin" href="javascript:void(0)"><?php _e('Add New Vitamin','nutrition-facts-vitamins'); ?></a>
+            
 		</div>
 	</div>
 <?php
