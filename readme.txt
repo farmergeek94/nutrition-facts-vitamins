@@ -24,7 +24,7 @@ This plugin creates a 'Label' custom post type which can be assigned to any page
 * For a Bilingual Label see my Canadian Nutrition Facts Label plugin - http://wordpress.org/plugins/canadian-nutrition-facts-label/
 
 = Donations: =
-I appreciate all donations, no matter the size. Further development of this plugin is not contingent on donations, but they are a nice incentive. To donate click on the donation to this plugin button in the sidebar below the Authors.
+I appreciate all donations, no matter the size. Further development of this plugin is not contingent on donations, but they are a nice incentive. To donate click on the "donate to this plugin" link in the sidebar below the Authors.
 
 == Installation ==
 
