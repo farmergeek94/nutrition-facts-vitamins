@@ -1,5 +1,6 @@
 === Nutrition Facts Vitamins ===
 Contributors:  dandelionweb, ankitpokhrel
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JEMTB4U8SYFL6
 Tags: nutrition facts label, food, nutrition, nutrition facts, nutrition label, nutrition labelling, vitamins, nutrition facts table
 Requires at least: 3.0
 Tested up to: 4.2.2
