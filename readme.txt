@@ -23,6 +23,9 @@ This plugin creates a 'Label' custom post type which can be assigned to any page
 * Developers can add do_shortcode('[nutrition-label]') to their templates.
 * For a Bilingual Label see my Canadian Nutrition Facts Label plugin - http://wordpress.org/plugins/canadian-nutrition-facts-label/
 
+= Donations: =
+I appreciate all donations, no matter the size. Further development of this plugin is not contingent on donations, but they are a nice incentive. To donate click on the donation to this plugin button in the sidebar below the Authors.
+
 == Installation ==
 
 1. Install via the WordPress.org plugin directory or by uploading the nutrition-facts-vitamins folder to the /wp-content/plugins directory
