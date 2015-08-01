@@ -3,9 +3,9 @@ Contributors:  dandelionweb, ankitpokhrel
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JEMTB4U8SYFL6
 Tags: nutrition facts label, food, nutrition, nutrition facts, nutrition label, nutrition labelling, vitamins, nutrition facts table
 Requires at least: 3.0
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: trunk
-Version: 2.1
+Version: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,16 +78,16 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 7. Example how to add additional vitamins 
 
 == Upgrade Notice ==
-
-= 1 =
-* Initial Release, forked and updated from easy-nutrition-facts-label plugin
-
+= 2.1.1 =
+* minor fix of Not a significant source of line and add missing space after Calories from fat
+= 2.1 =
+* localization
 = 2 =
 * Add ability for user generated additional vitamins
 * If a field is left blank add it to text summary line "Not a significant source of"
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
-= 2.1 =
-* localization
+= 1 =
+* Initial Release, forked and updated from easy-nutrition-facts-label plugin
 
 == Changelog ==
 
@@ -99,3 +99,5 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 * Separated CSS from the main plugin file. Also directories are added for css, js and images.
 = 2.1 =
 * localization
+= 2.1.1=
+* minor fix of Not a significant source of line

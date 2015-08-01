@@ -3,7 +3,7 @@
  Plugin Name:	Nutrition Facts Vitamins
  Plugin URI: 	http://dandelionwebdesign.com/downloads/nutrition-facts-vitamins/
  Description:	This plugin adds a custom post type "Labels" to generate a Nutrition Facts Label. Includes Vitamins A, C, Calcium and Iron. Also supports user generated additional vitamins or "Not a Significant source of" text for blank fields. Use shortcode [nutrition-label id=XXX]to add the label to any page or post.
- Version: 		2.1
+ Version: 		2.1.1
  Author: 		Dandelion Web Design Inc.
  Author URI:	http://dandelionwebdesign.com/
 
@@ -38,11 +38,11 @@ $rda = array(
 		'satfat' 			=> 20,
 		'cholesterol' 		=> 300,
 		'sodium' 			=> 2400,
-		'carbohydrates' 	=> 300,
-		'fiber' 			=> 25,
+		'carbohydrates' 	    => 300,
+		'fiber' 			    => 25,
 		'protein' 			=> 50,
-		'vitamin_a' 		=> 5000,
-		'vitamin_c' 		=> 60,
+		'vitamin_a' 		    => 5000,
+		'vitamin_c' 		    => 60,
 		'calcium' 			=> 1000,
 		'iron' 				=> 18
 	);
@@ -59,7 +59,7 @@ $nutrional_fields = array(
 					'cholesterol' 	=> __('Cholesterol','nutrition-facts-vitamins'),
 					'sodium' 		=> __('Sodium','nutrition-facts-vitamins'),
 					'carbohydrates' => __('Carbohydrates','nutrition-facts-vitamins'),
-					'fiber' 		=> __('Fiber','nutrition-facts-vitamins'),
+					'fiber' 		    => __('Fiber','nutrition-facts-vitamins'),
 					'sugars' 		=> __('Sugars','nutrition-facts-vitamins'),
 					'protein' 		=> __('Protein','nutrition-facts-vitamins'),
 					'vitamin_a'		=> __('Vitamin A','nutrition-facts-vitamins'),
@@ -77,19 +77,19 @@ function nutr_init()
 	load_plugin_textdomain('nutrition-facts-vitamins', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 	$labels = array(
-		'name' => __('Nutritional Labels','nutrition-facts-vitamins'),
-		'singular_name' => __('Label','nutrition-facts-vitamins'),
-		'add_new' => __('Add New','nutrition-facts-vitamins'),
-		'add_new_item' => __('Add New Label','nutrition-facts-vitamins'),
-		'edit_item' => __('Edit Label','nutrition-facts-vitamins'),
-		'new_item' => __('New Label','nutrition-facts-vitamins'),
-		'all_items' => __('All Labels','nutrition-facts-vitamins'),
-		'view_item' => __('View Label','nutrition-facts-vitamins'),
-		'search_items' => __('Search Labels','nutrition-facts-vitamins'),
-		'not_found' =>  __('No labels found','nutrition-facts-vitamins'),
+		'name'               => __('Nutritional Labels','nutrition-facts-vitamins'),
+		'singular_name'      => __('Label','nutrition-facts-vitamins'),
+		'add_new'            => __('Add New','nutrition-facts-vitamins'),
+		'add_new_item'       => __('Add New Label','nutrition-facts-vitamins'),
+		'edit_item'          => __('Edit Label','nutrition-facts-vitamins'),
+		'new_item'           => __('New Label','nutrition-facts-vitamins'),
+		'all_items'          => __('All Labels','nutrition-facts-vitamins'),
+		'view_item'          => __('View Label','nutrition-facts-vitamins'),
+		'search_items'       => __('Search Labels','nutrition-facts-vitamins'),
+		'not_found'          =>  __('No labels found','nutrition-facts-vitamins'),
 		'not_found_in_trash' => __('No labels found in Trash','nutrition-facts-vitamins'), 
-		'parent_item_colon' => '',
-		'menu_name' => __('Labels','nutrition-facts-vitamins')
+		'parent_item_colon'  => '',
+		'menu_name'          => __('Labels','nutrition-facts-vitamins')
 	);
 	
 	$args = array(
@@ -266,8 +266,8 @@ function nutr_modify_nutritional_label_table( $column )
 	$columns = array(
 		'cb'       			=> '<input type="checkbox" />',
 		'title'    			=> 'Title','nutrition-facts-vitamins',
-		'nutr_shortcode'    => 'Shortcode','nutrition-facts-vitamins',
-		'nutr_page'    		=> 'Page','nutrition-facts-vitamins',
+		'nutr_shortcode'                => 'Shortcode','nutrition-facts-vitamins',
+		'nutr_page'    	     	        => 'Page','nutrition-facts-vitamins',
 		'date'     			=> 'Date','nutrition-facts-vitamins'
 	);
 
@@ -401,7 +401,7 @@ function nutr_label_generate( $id, $width = 22 )
 	
 	$rtn .= "	<div class='item_row cf'>\n";
 	$rtn .= "		<span class='f-left'>" . __('Calories','nutrition-facts-vitamins') . " " . $calories . "</span>\n";
-	$rtn .= "		<span class='f-right'>" . __('Calories from Fat','nutrition-facts-vitamins') .($totalfat * 9) . "</span>\n";
+	$rtn .= "		<span class='f-right'>" . __('Calories from Fat ','nutrition-facts-vitamins') .($totalfat * 9) . "</span>\n";
 	$rtn .= "	</div>\n";
 	
 	$rtn .= "	<div class='item_row daily-value small'>% " . __('Daily Value','nutrition-facts-vitamins') . "*</div>\n";
@@ -457,7 +457,7 @@ function nutr_label_generate( $id, $width = 22 )
 		$rtn .= "		<span class='f-right'>" . $vitamin_a.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = "('vitamin A','nutrition-facts-vitamins')";
+		$insufficient[] = 'vitamin A';
 	}
 	
 
@@ -467,7 +467,7 @@ function nutr_label_generate( $id, $width = 22 )
 		$rtn .= "		<span class='f-right'>" . $vitamin_c.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = "('vitamin C','nutrition-facts-vitamins')";
+		$insufficient[] = "vitamin C";
 	}
 	
 	if( $calcium || ($calcium === "0") ) {
@@ -476,7 +476,7 @@ function nutr_label_generate( $id, $width = 22 )
 		$rtn .= "		<span class='f-right'>" .$calcium.  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = "('calcium','nutrition-facts-vitamins')";
+		$insufficient[] = 'calcium';
 	}
 
 	if( $iron || ($iron === "0") ) {
@@ -485,7 +485,7 @@ function nutr_label_generate( $id, $width = 22 )
 		$rtn .= "		<span class='f-right'>" . $iron .  "%</span>\n";
 		$rtn .= "	</div>\n";
 	} else {
-		$insufficient[] = "('iron','nutrition-facts-vitamins')";
+		$insufficient[] = 'iron';
 	}
 
    /*
@@ -522,7 +522,7 @@ function nutr_label_generate( $id, $width = 22 )
    		}
 
 		$rtn .= "	<div class='item_row cf'>\n";
-		$rtn .= 			__('Not a significant source of','nutrition-facts-vitamins') . implode(', ', $insufficient);
+		$rtn .= 			__("Not a significant source of ") . implode(', ', $insufficient);
 		$rtn .= 			$last . ".\n";
 		$rtn .= "	</div>";		
 	}    
