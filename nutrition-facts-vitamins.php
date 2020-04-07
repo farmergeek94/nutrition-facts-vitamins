@@ -3,8 +3,8 @@
  * Plugin Name:    Nutrition Facts Vitamins
  * Plugin URI:     https://dandelionwebdesign.com/downloads/nutrition-facts-label-vitamins/
  * Description:    Version 3.0 changes the Nutrition Label to the NEW FDA format. Adds a custom post type "Labels" to generate a Nutrition Facts Label. Includes nutrients D, Calcium, Iron and Potassium. Also supports user generated additional vitamins or "Not a Significant source of" text for blank fields. Use shortcode [nutrition-label id=XXX]to add the label to any page or post.
- * Version:       3.0
- * Author:        Dandelion Web Design Inc.
+ * Version:       4.0
+ * Author:        Dandelion Web Design Inc. modified by Heartland Business Systems
  * Author URI:    https://dandelionwebdesign.com/
  *
  * This program is free software; you can redistribute it and/or modify
@@ -48,17 +48,17 @@ function update_notice()
 /* RDA SETTINGS */
 $rda = [
         'totalfat' => 80,
-        'satfat' => 20,
+        'satfat' => 15,
         'cholesterol' => 300,
         'sodium' => 2300,
         'carbohydrates' => 300,
-        'fiber' => 30,
+        'fiber' => 25,
         'protein' => 50,
         'sugar' => 50,
-        'vitamin_d' => 20,
-        'calcium' => 1300,
-        'iron' => 18,
-        'potassium' => 4600
+        'vitamin_d' => 100,
+        'calcium' => 100,
+        'iron' => 100,
+        'potassium' => 100
 ];
 
 /* BASE NUTRIIONAL FIELDS */
@@ -69,6 +69,8 @@ $nutritional_fields = [
         'totalfat' => __('Total Fat', 'nutrition-facts-vitamins'),
         'satfat' => __('Saturated Fat', 'nutrition-facts-vitamins'),
         'transfat' => __('Trans. Fat', 'nutrition-facts-vitamins'),
+        'polyunsaturatedfat' => __('Polyunsaturated Fat', 'nutrition-facts-vitamins'),
+        'monounsaturatedfat' => __('Monounsaturated Fat', 'nutrition-facts-vitamins'),
         'cholesterol' => __('Cholesterol', 'nutrition-facts-vitamins'),
         'sodium' => __('Sodium', 'nutrition-facts-vitamins'),
         'carbohydrates' => __('Carbohydrates', 'nutrition-facts-vitamins'),
@@ -497,7 +499,7 @@ function nutr_label_generate($id, $width = 22)
 
     // BUILD CALORIES IF WE DON'T HAVE ANY
     if ($calories == 0) {
-        $calories = (($protein + $carbohydrates) * 4) + ($totalfat * 9);
+        $calories = (($protein + $carbohydrates) * 4) + ($totalfat * 10);
     }
 
     // WIDTH THE LABEL
@@ -506,15 +508,16 @@ function nutr_label_generate($id, $width = 22)
         $style = " style='width: " . $width . "em; font-size: " . (($width / 22) * .75) . "em;'";
     }
 
+    $servingsizeounces = $servingsize . ' oz';
     $rtn = "";
     $rtn .= "<div class='wp-nutrition-label' id='wp-nutrition-label-$id' " . ($style ? $style : "") . ">\n";
 
     $rtn .= "	<div class='heading'>" . __('Nutrition Facts', 'nutrition-facts-vitamins') . "</div>\n";
 
-    $rtn .= "	<div style='font-size: 18px; padding-top: 3px; padding-bottom: 5px'>" . $servings . " " . __('servings per container',
+    $rtn .= "	<div style='font-size: 18px; padding-top: 3px; padding-bottom: 5px'>" . $servings . " " . __('',
                     'nutrition-facts-vitamins') . "</div>\n";
     $rtn .= "	<div style='font-weight: 900; font-size: 1.250em'><span class='f-left' style='padding-bottom: 5px'>" . __('Serving size',
-                    'nutrition-facts-vitamins') . "</span> <span style='font-weight: 900; float: right'>" . $servingsize . "</span></div>\n";
+                    'nutrition-facts-vitamins') . "</span> <span style='font-weight: 900; float: right'>" . $servingsizeounces . "</span></div>\n";
     $rtn .= "	<hr style='clear: both; height: 14px' />\n";
     $rtn .= "	<div class='amount-per small item_row noborder'>" . __('Amount per serving',
                     'nutrition-facts-vitamins') . "</div>\n";
@@ -545,6 +548,14 @@ function nutr_label_generate($id, $width = 22)
     $rtn .= "	<div class='indent item_row cf'>\n";
     $rtn .= "		<span><em>" . __('Trans', 'nutrition-facts-vitamins') . '</em> ' . __('Fat',
                     'nutrition-facts-vitamins') . " " . $transfat . "g</span>";
+    $rtn .= "	</div>\n";
+
+    $rtn .= "	<div class='indent item_row cf'>\n";
+    $rtn .= "		<span class='f-left'>" . __('Polyunsaturated Fat', 'nutrition-facts-vitamins') . " " . $polyunsaturatedfat . "g</span>";
+    $rtn .= "	</div>\n";
+
+    $rtn .= "	<div class='indent item_row cf'>\n";
+    $rtn .= "		<span class='f-left'>" . __('Monounsaturated Fat', 'nutrition-facts-vitamins') . " " . $monounsaturatedfat . "g</span>";
     $rtn .= "	</div>\n";
 
     $rtn .= "	<div class='item_row cf'>\n";
@@ -591,8 +602,7 @@ function nutr_label_generate($id, $width = 22)
 
     if (isset($vitamin_d) || ($vitamin_d === "0")) {
         $rtn .= "	<div class='item_row noborder cf'>\n";
-        $rtn .= "		<span class='f-left'>" . __('Vitamin D',
-                        'nutrition-facts-vitamins') . ' ' . $vitamin_d . "mcg</span>\n";
+        $rtn .= "		<span class='f-left'>Vitamin D</span>\n";
         $rtn .= "		<span class='f-right'>" . nutr_percentage($vitamin_d, $rda['vitamin_d']) . "%</span>\n";
         $rtn .= "	</div>\n";
     } else {
@@ -601,8 +611,7 @@ function nutr_label_generate($id, $width = 22)
 
     if ($calcium || ($calcium === "0")) {
         $rtn .= "	<div class='item_row cf'>\n";
-        $rtn .= "		<span class='f-left'>" . __('Calcium',
-                        'nutrition-facts-vitamins') . ' ' . $calcium . "mg</span>\n";
+        $rtn .= "		<span class='f-left'>Calcium</span>\n";
         $rtn .= "		<span class='f-right'>" . nutr_percentage($calcium, $rda['calcium']) . "%</span>\n";
         $rtn .= "	</div>\n";
     } else {
@@ -611,7 +620,7 @@ function nutr_label_generate($id, $width = 22)
 
     if ($iron || ($iron === "0")) {
         $rtn .= "	<div class='item_row cf'>\n";
-        $rtn .= "		<span class='f-left'>" . __('Iron', 'nutrition-facts-vitamins') . ' ' . $iron . "mg</span>\n";
+        $rtn .= "		<span class='f-left'>Iron</span>\n";
         $rtn .= "		<span class='f-right'>" . nutr_percentage($iron, $rda['iron']) . "%</span>\n";
         $rtn .= "	</div>\n";
     } else {
@@ -620,8 +629,7 @@ function nutr_label_generate($id, $width = 22)
 
     if (isset($potassium) || ($potassium === "0")) {
         $rtn .= "	<div class='item_row cf'>\n";
-        $rtn .= "		<span class='f-left'>" . __('Potassium',
-                        'nutrition-facts-vitamins') . ' ' . $potassium . "mg</span>\n";
+        $rtn .= "		<span class='f-left'>Potassium</span>\n";
         $rtn .= "		<span class='f-right'>" . nutr_percentage($potassium, $rda['potassium']) . "%</span>\n";
         $rtn .= "	</div>\n";
     } else {
