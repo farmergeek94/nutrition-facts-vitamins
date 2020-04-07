@@ -69,6 +69,8 @@ Leave a vitamin blank and it will be added to the line.  If you put a 0 in the f
 7. Example how to add additional vitamins
 
 == Upgrade Notice ==
+= 4 =
+Added polyunsaturatedfat and monounsaturatedfat declarations to the nutritional label.
 = 3 =
 CAUTION: version 3.0 of this plugin changes the Nutrition Label to the NEW FDA format. Only update the plugin if you want this new format. Includes nutrients D, Calcium, Iron and Potassium. See http://www.fda.gov/downloads/Food/NewsEvents/WorkshopsMeetingsConferences/UCM508389.pdf for a detailed description of what's changed.
 
